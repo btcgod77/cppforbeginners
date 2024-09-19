@@ -60,9 +60,6 @@ int main() {
     std::future<std::string> __future1 = __promise1.get_future();
     std::future<std::string> __future2 = __promise2.get_future();
 
-    std::thread __t1(__async_task<std::string>, std::move(__promise1), "Hello, ");
-    std::thread __t2(__async_task<std::string>, std::move(__promise2), "World!");
-
     __t1.join();
     __t2.join();
 
